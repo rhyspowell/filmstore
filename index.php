@@ -63,7 +63,9 @@
   </head>
 
   <?php
-    include 'dbconnect.php';
+    require 'config.php';
+    require 'dbconnect.php';
+    require 'helpers.php';
   ?>
 
   <body>
@@ -101,7 +103,7 @@
             }
             catch (PDOException $e)
             {
-              $error = 'Error fetching jokes: ' . $e->getMessage();
+              $error = 'Error fetching recent films: ' . $e->getMessage();
               echo $error . $e;
               exit();
             }
@@ -118,7 +120,8 @@
       <hr>
 
       <div class="footer">
-        <p>&copy; Company 2013</p>
+        <p>&copy; Rhys Powell</p>
+        <p><a href="admin_login.php">Admin</p>
       </div>
 
     </div> <!-- /container -->
